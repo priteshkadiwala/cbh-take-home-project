@@ -16,8 +16,6 @@ You will be graded on the level of detail in each ticket, the clarity of the exe
 
 ## Your Breakdown Here
 
-Based on the problem description, here is the breakdown of the feature request into individual tickets:
-
 ### Ticket 1: Update Agent Model and Database Schema
 
 - Acceptance Criteria:
@@ -26,40 +24,40 @@ Based on the problem description, here is the breakdown of the feature request i
   - The `customId` field should be optional, allowing Facilities to save their own custom ids if desired.
 - Time/Effort Estimate: 2 hours
 - Implementation Details:
-  - Modify the Agent model/schema definition to include the `customId` field.
+  - Modify the Agent model/schema definition to include the `customId` field and make it optional.
   - Update the database schema by executing the necessary migration scripts or manually altering the table structure.
 - Testing Criteria:
-  - Write unit tests to ensure that the customId field is added to the Agent model/schema correctly.
-  - Write unit tests to ensure that the customId field is optional and can be left blank.
-  - Write integration tests to verify that the database schema is updated successfully and the customId field is persisted properly.
-  - Write integration tests to verify that the customId field is persisted correctly when it is not empty.
+  - Write unit tests to ensure that the `customId` field is added to the Agent model/schema correctly.
+  - Write unit tests to ensure that the `customId` field is optional and can be left blank.
+  - Write integration tests to verify that the database schema is updated successfully and the `customId` field is persisted properly.
+  - Write integration tests to verify that the `customId` field is persisted correctly when it is not empty.
 
 ### Ticket 2: Update Shifts Retrieval Function
 
 - Acceptance Criteria:
-  - Modify the `getShiftsByFacility` function to include the custom id of the assigned Agent in the metadata returned for each Shift.
+  - Modify the `getShiftsByFacility` function to include the `customId` of the assigned Agent in the metadata returned for each Shift.
 - Time/Effort Estimate: 1 hour
 - Implementation Details:
-  - Retrieve the custom id of the assigned Agent from the Agent model based on the internal database id.
-  - Update the metadata returned for each Shift to include the custom id.
+  - Retrieve the `customId` of the assigned Agent from the Agent model based on the internal database id.
+  - Update the metadata returned for each Shift to include the `customId`.
 - Testing Criteria:
-  - Write unit tests to confirm that the getShiftsByFacility function retrieves the Shifts with the correct metadata, including the custom id of the assigned Agent.
+  - Write unit tests to confirm that the `getShiftsByFacility` function retrieves the Shifts with the correct metadata, including the `customId` of the assigned Agent.
 
 ### Ticket 3: Update Report Generation Function
 
 - Acceptance Criteria:
-  - Modify the `generateReport` function to use the custom id of the assigned Agent when generating the reports.
-  - Include the custom id in the appropriate location in the generated PDF report if it is not empty.
-  - Include the internal database id of the assigned Agent in the appropriate location in the generated PDF report if the custom id is empty.
+  - Modify the `generateReport` function to use the `customId` of the assigned Agent when generating the reports.
+  - Include the `customId` in the appropriate location in the generated PDF report if it is not empty.
+  - Include the internal database id of the assigned Agent in the appropriate location in the generated PDF report if the `customId` is empty.
 - Time/Effort Estimate: 2 hours
 - Implementation Details:
-  - Modify the `generateReport` function to retrieve the custom id of the assigned Agent and use it instead of the internal database id when it is not empty.
-  - Update the logic for generating the PDF report to include the custom id in the appropriate sections.
+  - Modify the `generateReport` function to retrieve the `customId` of the assigned Agent and use it instead of the internal database id when it is not empty.
+  - Update the logic for generating the PDF report to include the `customId` in the appropriate sections.
 - Testing Criteria:
-  - Write unit tests to ensure that the generateReport function correctly uses the custom id of the assigned Agent in the report generation process when it is not empty.
-  - Write unit tests to ensure that the generateReport function uses the internal database id of the assigned Agent in the report generation process when the custom id is empty.
-  - Write integration tests to verify that the custom id is included in the expected location within the generated PDF report.
-  - Write integration tests to verify that the internal database id is included in the expected location within the generated PDF report when the custom id is empty.
+  - Write unit tests to ensure that the generateReport function correctly uses the `customId` of the assigned Agent in the report generation process when it is not empty.
+  - Write unit tests to ensure that the generateReport function uses the internal database id of the assigned Agent in the report generation process when the `customId` is empty.
+  - Write integration tests to verify that the `customId` is included in the expected location within the generated PDF report.
+  - Write integration tests to verify that the internal database id is included in the expected location within the generated PDF report when the `customId` is empty.
 
 ### Ticket 4: Facility Interface Update
 
